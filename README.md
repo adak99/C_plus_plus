@@ -1,3 +1,3 @@
 <p align="center">
-    <img src="java.png" hight="40%" width="100%">
+    <img src="c.png" hight="40%" width="100%">
 </p>
