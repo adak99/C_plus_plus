@@ -62,5 +62,7 @@ int main()
         cout << endl;
     }
 
+    delete[] stud;
+
     return 0;
 }
