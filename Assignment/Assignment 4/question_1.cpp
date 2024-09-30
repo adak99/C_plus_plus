@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 class CricketerData {
@@ -81,3 +80,45 @@ int main() {
 	
 	return 0;  
 }
+
+
+/*
+Input-> 
+
+Enter how many cricketer details you want to store: 2
+
+Enter cricketer data 1:
+Enter name of the cricketer: Sachin
+Enter number of innings: 200
+Enter how many times not out: 30
+Enter total runs: 15921
+Enter total wickets: 45
+
+Enter cricketer data 2:
+Enter name of the cricketer: Kapil
+Enter number of innings: 100
+Enter how many times not out: 20
+Enter total runs: 5248
+Enter total wickets: 434
+
+
+
+output-> 
+
+Cricketer data 1:
+Name: Sachin
+Number of innings: 200
+Not out innings: 30
+Total runs: 15921
+Total wickets: 45
+He is a BATSMAN.
+
+Cricketer data 2:
+Name: Kapil
+Number of innings: 100
+Not out innings: 20
+Total runs: 5248
+Total wickets: 434
+He is an ALL-ROUNDER.
+
+*/
