@@ -2,65 +2,72 @@
 #include <string>
 using namespace std;
 
-class student {
- public:
-  int roll;
-  string name;
-  int age, m1, m2, m3;
-  int total;
-  double avg;
+class student
+{
+public:
+    int roll;
+    string name;
+    int age, m1, m2, m3;
+    int total;
+    double avg;
 
- public:
-  void setData() {
-    cout << "Enter student roll no: ";
-    cin >> roll;
-    cout << "Enter student name: ";
-    cin >> name;
-    cout << "Enter age: ";
-    cin >> age;
-    cout << "Enter marks(m1): ";
-    cin >> m1;
-    cout << "Enter marks(m2): ";
-    cin >> m2;
-    cout << "Enter marks(m3): ";
-    cin >> m3;
-    total = (m1 + m2 + m3);
-    avg = (m1 + m2 + m3) / 3;
-  }
+public:
+    void setData()
+    {
+        cout << "Enter student roll no: ";
+        cin >> roll;
+        cout << "Enter student name: ";
+        cin >> name;
+        cout << "Enter age: ";
+        cin >> age;
+        cout << "Enter marks(m1): ";
+        cin >> m1;
+        cout << "Enter marks(m2): ";
+        cin >> m2;
+        cout << "Enter marks(m3): ";
+        cin >> m3;
+        total = (m1 + m2 + m3);
+        avg = (m1 + m2 + m3) / 3;
+    }
 };
 
-int main() {
-  int x;
-  cout << "Enter how many student details you wnat to store: ";
-  cin >> x;
-  cout << endl;
-
-  student *data = new student[x];
-
-  cout << "Enter student detials: " << endl;
-  for (int i = 0; i < x; i++) {
-    cout << "Student no: " << (i + 1) << endl;
-    data->setData();
+int main()
+{
+    int x;
+    cout << "Enter how many student details you wnat to store: ";
+    cin >> x;
     cout << endl;
-  }
 
-  int ranker = data[0].total;
-  int index = 0;
+    student *data = new student[x];
 
-  for (int i = 0; i < x; i++) {
-    if (ranker > data[i].total) {
-      ranker = data[i].total;
+    cout << "Enter student detials: " << endl;
+    for (int i = 0; i < x; i++)
+    {
+        cout << "Student no: " << (i + 1) << endl;
+        data->setData();
+        cout << endl;
     }
-  }
 
-  if (ranker != -1) {
-    cout << "Topper of the BCA 3rd semester" << endl;
-    cout << "Higest Marks: " << data->total << endl;
-    cout << "Roll number of highest scorer: " << data->roll << endl;
-    cout << "Age of the highest Scorer: " << data->age << endl;
-  }
+    int ranker = data[0].total;
+    int index = 0;
 
-  return 0;
+    for (int i = 0; i < x; i++)
+    {
+        if (ranker > data[i].total)
+        {
+            ranker = data[i].total;
+        }
+    }
+
+    if (ranker != -1)
+    {
+        cout << "Topper of the BCA 3rd semester" << endl;
+        cout << "Higest Marks: " << data->total << endl;
+        cout << "Roll number of highest scorer: " << data->roll << endl;
+        cout << "Age of the highest Scorer: " << data->age << endl;
+    }
+
+    return 0;
 }
 
 /*
