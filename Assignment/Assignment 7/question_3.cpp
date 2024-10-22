@@ -7,10 +7,10 @@ class xyz;
 class abc
 {
 private:
-    int data;
+    float data;
 
 public:
-    abc(int data)
+    abc(float data)
     {
         this->data = data;
     }
@@ -21,10 +21,10 @@ public:
 class pqr
 {
 private:
-    int data;
+    float data;
 
 public:
-    pqr(int data)
+    pqr(float data)
     {
         this->data = data;
     }
@@ -35,10 +35,10 @@ public:
 class xyz
 {
 private:
-    int data;
+    float data;
 
 public:
-    xyz(int data)
+    xyz(float data)
     {
         this->data = data;
     }
@@ -60,9 +60,9 @@ void max(abc a, pqr b, xyz c)
 
 int main()
 {
-    abc a(20);
-    pqr b(10);
-    xyz c(50);
+    abc a(20.90);
+    pqr b(10.99);
+    xyz c(50.00);
     max(a, b, c);
 
     return 0;
