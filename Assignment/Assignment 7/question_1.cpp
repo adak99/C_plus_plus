@@ -66,3 +66,21 @@ int main()
 
     return 0;
 }
+
+/*
+3 integer:
+Sum: 50
+Average: 16
+
+3 float:
+Sum: 14.3
+Average: 4.76667
+
+2 integer-1float:
+Sum: 124.4
+Average: 41.4667
+
+1 integer-1float-1integer:
+Sum: 67.8
+Average: 22.6
+*/
