@@ -1,43 +1,84 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-class BookData
+class Book
 {
 private:
-    int ISBN, page, price;
+    int isbn, page, price;
 
 public:
-    BookData(int ISBN, int page, int price)
+    // create a constructor
+    Book(int isbn, int page, int price)
     {
-        this->ISBN = ISBN;
+        this->isbn = isbn;
         this->page = page;
         this->price = price;
     }
 
-    float getPrice() { return price; }
+    // get price function
+    int getPrice() { return price; }
+    // get ISBN function
+    int getISBN() { return isbn; }
 
-    float getISBN() { return ISBN; }
-
+    // display all data
     void display()
     {
-        cout << ISBN << "\t\t" << page << "\t\t" << price << endl;
+        cout << isbn << "\t\t" << page << "\t\t" << price << endl;
     }
 };
 
 int main()
 {
 
-    BookData Book_1(101, 600, 420);
-    BookData Book_2(122, 720, 540);
-    BookData Book_3(133, 550, 610);
+    Book data_1(101, 600, 420);
+    Book data_2(122, 720, 540);
+    Book data_3(133, 550, 610);
 
-    BookData books_data[3] = {Book_1, Book_2, Book_3};
+    Book allData[3] = {data_1, data_2, data_3};
 
-    float totalPrice = 0;
-    float maxPrice = books_data[0].getPrice();
-    float minPrice = books_data[0].getPrice();
-    int maxISBN = books_data[0].getISBN();
-    int minISBN = books_data[0].getISBN();
+    // calculate total price
+    int totalPrice = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        totalPrice += allData[i].getPrice();
+    }
+
+    // calcualte avarage
+    float avg = totalPrice / 3;
+
+    // calculate max and min ISBN and Price
+    int minPrice = allData[0].getPrice();
+    int minISBN = allData[0].getISBN();
+    int maxPrice = allData[0].getPrice();
+    int maxISBN = allData[0].getISBN();
+
+    for (int i = 0; i < 3; i++)
+    {
+        if (allData[i].getPrice() < minPrice && allData[i].getISBN() < minISBN)
+        {
+            minPrice = allData[i].getPrice();
+            minISBN = allData[i].getISBN();
+        }
+
+        if (allData[i].getPrice() > minPrice && allData[i].getISBN() > minISBN)
+        {
+            maxPrice = allData[i].getPrice();
+            maxISBN = allData[i].getISBN();
+        }
+    }
+
+    // display all data
+    cout << "ISBN" << "\t\t" << "Page" << "\t\t" << "Price" << endl;
+    for (int i = 0; i < 3; i++)
+    {
+        allData[i].display();
+    }
+
+    cout << "The total price of all books: " << totalPrice << endl;
+    cout << "The average price of all books: " << (int)avg << endl;
+    cout << "Highest book price and ISBN: " << "Price: " << maxPrice << " ISBN: " << maxISBN << endl;
+    cout << "Lowest book price and ISBN: " << "Price: " << minPrice << " ISBN: " << minISBN << endl;
 
     return 0;
 }
