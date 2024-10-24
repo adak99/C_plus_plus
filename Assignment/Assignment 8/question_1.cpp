@@ -81,3 +81,16 @@ int main()
 
     return 0;
 }
+
+/*
+
+ISBN            Page            Price
+101             600             420
+122             720             540
+133             550             610
+The total price of all books: 1570
+The average price of all books: 523.333
+Highest book price and ISBN: Price: 610 ISBN: 133
+Lowest book price and ISBN: Price: 420 ISBN: 101
+
+*/
